@@ -4,6 +4,10 @@
     --gray-color: #8390A2;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -17,7 +21,7 @@
 .sidebar-menu {
     height: 100vh;
     display: flex;
-    position: relative;
+    position: fixed;
     width: 100px;
     flex-direction: column;
     justify-content: center;
@@ -27,12 +31,15 @@
 
 .sidebar-menu ul li {
     list-style-type: none;
+    display: inline;
 }
 
-.sidebar-menu ul li a {
-    padding: 10px;
+.sidebar-menu ul li i {
+    padding: 5px;
     font-size: 2.5rem;
     color: var(--side-color);
+    cursor: pointer;
+    margin: 8px auto;
 }
 
 .sidebar-menu ul li span {
@@ -40,6 +47,7 @@
     font-size: 1.2rem;
     position: absolute;
     margin-top: 15px;
+    margin-left: 10px;
     background-color: var(--side-color);
     padding: 2px 10px;
     border-radius: 15px;
@@ -53,64 +61,234 @@
     opacity: 1;
 }
 
+.sidebar-menu ul li i.active {
+    display: inline-block;
+    background-color: var(--side-color);
+    border-radius: 10px;
+    color: #fff;
+}
+
 /* Main Container */
 
 .main-container {
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    margin-left: 100px;
-    height: 100vh;
+    margin-left: 200px;
 }
 
 main {
-    width: 80%;
-    margin-top: 20vh;
+    width: 80vw;
 }
 
 /* HOME MENU */
 
-.home {
+#home {
+    margin-top: 5vh;
     display: flex;
     justify-content: space-evenly;
 }
 
-.home .info-profile {
+#home .info-profile {
     margin: 30px;
 }
 
-.home .img-profile img {
+#home .img-profile img {
     border-radius: 50%;
     width: 350px;
     margin: 30px
 }
 
-.home .info-profile div {
+#home .info-profile div {
     margin-bottom: 30px;
-
+    margin-top: 50px;
 }
 
-.home .info-profile div h1,
-.home .info-profile h3 span {
+#home .info-profile div h1 {
     color: var(--main-color);
     margin-bottom: 10px;
 }
 
-.home .info-profile span {
+#home .info-profile h3 span {
+    background-color: var(--side-color);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+#home .info-profile span {
+    display: inline-block;
     color: var(--gray-color);
 }
 
-.home .info-profile a {
-    display: inline-block;
-    background-color: var(--main-color);
-    color: #fff;
-    padding: 4px 10px;
-    margin-top: 50px;
-    border-radius: 15px;
+/* About Menu */
+
+#about {
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr;
+    column-gap: 25px;
+    justify-content: space-between;
+    margin: 50px;
 }
 
-.home .info-profile a:hover {
-    background-color: var(--gray-color);
+#about h2 {
+    background-color: var(--main-color);
+    padding: 2px 8px;
+    color: #fff;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#about .profile table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+#about .profile tr td:last-child {
+    color: var(--gray-color);
+}
+
+#about .hobby ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+    color: var(--gray-color);
+}
+
+#about .hobby ul li {
+    margin: 0px 5px;
+    position: relative;
+}
+
+#about .hobby ul li i {
+    display: block;
+    font-size: 6rem;
+}
+
+#about .hobby ul li:hover span {
+    position: absolute;
+    display: block;
+    margin-top: -10px;
+    margin-left: 10px;
+    opacity: 1;
+}
+
+#about .hobby ul li span {
+    background-color: var(--side-color);
+    color: #fff;
+    display: none;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1;
+    width: 80%;
+}
+
+#about .games table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+#about .games tr td:last-child {
+    color: var(--gray-color);
+}
+
+/* Skills */
+
+#skills {
+    display: flex;
+    margin: 80px 0 50px 30px;
+    align-items: flex-start;
+}
+
+#skills .language, .frameworks, .tools {
+    margin: 0 10px;
+    border-radius: 10px;
+    padding: 15px 20px 30px 20px;
+    box-shadow: 2px 3px 13px 2px rgba(0, 0, 0, 0.25);
+}
+
+#skills h2{
+    color: var(--side-color);
+    border-bottom: 2px dotted var(--gray-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 280px;
+}
+
+#skills div span {
+    display: inline-block;
+    margin: 4px 0;
+    color: var(--gray-color);
+}
+
+#skills .percentage {
+    width: 90%;
+    height: 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#skills .percentage div {
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+/* Works */
+
+#works{
+    margin:30px
+}
+
+#works h2{
+    margin:0 10px;
+    color: var(--side-color);
+}
+
+#works .flex-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#works .flex-container div {
+    box-sizing: border-box;
+    flex:45%;
+    padding: 20px;
+    margin: 10px 0px;
+}
+
+#works .flex-container div:first-child {
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+
+#works .flex-container div:first-child p{
+    color: #fff;
+}
+
+#works .flex-container div:first-child span a{
+    color: #fff;
+}
+
+#works .flex-container div p{
+    font-size: 0.9rem;
+    margin: 10px 0;
+    color: var(--gray-color);
+}
+
+#works .flex-container div span{
+    display: inline-block;
+    width: 35%;
+    font-size: 0.8rem;
+}
+
+#works .flex-container div span a{
+    color: var(--main-color);
 }
