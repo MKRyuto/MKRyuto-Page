@@ -19,14 +19,20 @@ html {
 /* Sidebar */
 
 .sidebar-menu {
+    margin-left: 30px;
     height: 100vh;
     display: flex;
     position: fixed;
-    width: 100px;
+    width: 60px;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     z-index: 1;
+}
+
+.sidebar-menu ul{
+    background-color: #fff;
+    border-radius: 15px;
 }
 
 .sidebar-menu ul li {
@@ -76,7 +82,7 @@ html {
     position: absolute;
     top: 0;
     left: 0;
-    margin-left: 200px;
+    margin-left: 11vw;
 }
 
 main {
@@ -203,9 +209,11 @@ main {
     display: flex;
     margin: 80px 0 50px 30px;
     align-items: flex-start;
+    justify-content: space-evenly;
 }
 
 #skills .language, .frameworks, .tools {
+    width: 50%;
     margin: 0 10px;
     border-radius: 10px;
     padding: 15px 20px 30px 20px;
@@ -217,7 +225,6 @@ main {
     border-bottom: 2px dotted var(--gray-color);
     padding-bottom: 10px;
     margin-bottom: 10px;
-    width: 280px;
 }
 
 #skills div span {
@@ -242,7 +249,7 @@ main {
 /* Works */
 
 #works{
-    margin:30px
+    margin:80px 30px;
 }
 
 #works h2{
@@ -255,6 +262,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: 0 20px
 }
 
 #works .flex-container div {
@@ -291,4 +299,222 @@ main {
 
 #works .flex-container div span a{
     color: var(--main-color);
+}
+
+#works .flex-container div span a:hover {
+    color: var(--gray-color);
+}
+
+/* Educations */
+
+#educations{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    margin:40px auto;
+    width: 85%;
+    border-radius: 15px;
+    box-shadow: 2px 3px 13px 2px rgba(0, 0, 0, 0.25);
+}
+
+#educations div.flex-container{
+    display: flex;
+    flex:50%;
+    align-items: center;
+    justify-content: center;
+}
+
+#educations div.flex-container:first-child {
+    border-right: 1px solid var(--gray-color);
+}
+
+#educations .flex-container div{
+    margin: 10px;
+}
+
+#educations .flex-container p{
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+#educations .flex-container span{
+    color: var(--side-color);
+}
+
+/* Portofolio */
+#portofolio{
+    margin: 20px 0 80px 0;
+}
+
+#portofolio .project {
+    text-align: center;
+    margin-top: 80px;
+}
+
+#portofolio .project span {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 5px 30px;
+    border-radius: 10px;
+}
+
+#portofolio .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#portofolio .flex-container .card {
+    flex: 40%;
+    display: flex;
+    margin: 20px;
+    height: 160px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 13px 2px rgba(0, 0, 0, 0.25);
+}
+
+#portofolio .flex-container .card .left {
+    position: relative;
+    margin-left: 0 40px;
+    max-width: 700px;
+    background-color: #fff;
+}
+
+#portofolio .flex-container .card .left img {
+    margin: auto;
+    max-width: 100%;
+    width: 10em;
+    height: 10em;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+#portofolio .flex-container .card .left span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 10px;
+    font-size: 0.7rem;
+    background-color: var(--side-color);
+    padding: 2px 5px;
+    border-radius: 15px;
+}
+
+#portofolio .flex-container .card .left span a {
+    color: #fff;
+}
+
+#portofolio .flex-container .card .left span :hover {
+    opacity: 0.7;
+}
+
+#portofolio .flex-container .card .right {
+    padding: 15px 25px;
+}
+
+#portofolio .flex-container .card .right span {
+    background-color: darkslategrey;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 2px 7px;
+    border-radius: 10px;
+}
+
+#portofolio .flex-container .card .right h4 {
+    color: #000;
+    margin: 10px 0;
+}
+
+#portofolio .flex-container .card div ul {
+    margin: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#portofolio .flex-container .card div ul li{
+    flex:50%;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+.stop{
+    border-radius: 50%;
+    background-color: red;
+    color: red;
+}
+
+.done {
+    border-radius: 50%;
+    background-color: green;
+    color: green;
+}
+
+.stop{
+    border-radius: 50%;
+    background-color: red;
+    color: red;
+}
+
+.progress {
+    border-radius: 50%;
+    background-color: orange;
+    color: orange;
+}
+
+.coming{
+     border-radius: 50%;
+     background-color:blue;
+     color: blue;
+}
+
+/* Contact */
+
+#contact{  
+    width: 98.5vw;
+    margin-left: -11vw;
+    background-color: var(--main-color);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+#contact h2{
+    display: inline-block;
+    color: #fff;
+    border-bottom: 2px dotted #fff;
+}
+
+#contact .flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 120px;
+    padding: 40px 0;
+}
+
+#contact .flex-container i{
+    background-color: #fff;
+    font-size: 3.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--side-color);
+}
+
+#contact .flex-container i:hover {
+    background-color: var(--side-color);
+    color: #fff;
+}
+
+#contact span{
+    display: inline-block;
+    color: #fff;
+    opacity: 0.7;
+    margin-top: 20px;
 }
